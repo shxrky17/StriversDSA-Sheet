@@ -1,0 +1,20 @@
+class Solution{
+public:
+    int evenlyDivides(int N){
+        //code here
+        int cnt = 0;       // Counter to store the number of digits that evenly divide N
+        int originalN = N; // Store the original value of N
+        
+        while (N > 0) {
+            int digit = N % 10;  // Get the last digit of N
+            N = N / 10;          // Remove the last digit
+            
+            // Check if digit is non-zero and divides originalN evenly
+            if (digit != 0 && originalN % digit == 0) {
+                cnt++;           // Increment count if digit divides originalN
+            }
+        }
+        
+        return cnt;  
+    }
+};
